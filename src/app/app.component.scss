@@ -1,0 +1,8 @@
+@import './node_modules/bootstrap/scss/variables';
+
+.navbar-custom {
+    z-index: $zindex-navbar;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
