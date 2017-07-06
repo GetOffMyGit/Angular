@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 import * as ScrollMagic from 'scrollmagic';
@@ -6,21 +7,26 @@ import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugin
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
 import { PageFadeTransition } from '../animations/router-animations';
-import { ScrollAnimationsService } from '../animations/scroll-animations.service'; 
+import { ScrollAnimationsService } from '../animations/scroll-animations.service';
+import { WindowReferenceService } from '../global-object.services/window-reference.service';
 
 @Component({
     selector: 'page-one',
     templateUrl: './page-one.component.html',
-    providers: [ScrollAnimationsService],
+    providers: [ScrollAnimationsService,
+        WindowReferenceService],
     animations: [PageFadeTransition],
     host: {
-        '[class.content]' : 'true',
+        '[class.content]': 'true',
         '[@PageFadeTransition]': ''
     }
 })
 export class PageOneComponent implements OnInit {
+    private _window: Window;
 
-    constructor(private scrollAnimationsService : ScrollAnimationsService) { }
+    constructor(private scrollAnimationsService: ScrollAnimationsService, private windowReferenceService: WindowReferenceService, private route: ActivatedRoute) {
+        this._window = windowReferenceService.nativeWindow;
+    }
 
     ngOnInit() {
         var controller = new ScrollMagic.Controller();
@@ -35,36 +41,29 @@ export class PageOneComponent implements OnInit {
 
         var scene = new ScrollMagic.Scene().setTween(fadeToRedAnimation).triggerElement(triggerElement).addTo(controller).addIndicators();
 
-        $("a").click(function(e) {
-            var hash = window.location.hash;
+        var componentRef = this;
+        $(".side-nav-link").click(function (e) {
+            // componentRef.route.fragment.subscribe((fragment : string) => {
+            //     //var hash = componentRef._window.location.hash;
+            //     console.log(fragment);
+            //     e.preventDefault();
+            //     $('html, body').animate({
+            //         scrollTop: $(fragment).offset().top
+            //     }, 300, "swing", function () {
+            //         window.location.hash = fragment;
+            //     });
+            // });
+
             e.preventDefault();
+            //var hash = componentRef._window.location.hash;
+            //console.log(hash);
+            //var nativeWindow = componentRef.windowReferenceService.nativeWindow.location.hash;
+            var hash = $(this).attr('href');
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 300, "swing", function() {
-                window.location.hash = hash;
+            }, 300, "swing", function () {
+                componentRef._window.location.hash = hash;
             });
         });
-
-//         $("a").on('click', function(event) {
-
-//     // Make sure this.hash has a value before overriding default behavior
-//     if (window.location.hash !== "") {
-//       // Prevent default anchor click behavior
-//       event.preventDefault();
-
-//       // Store hash
-//       var hash = window.location.hash;
-
-//       // Using jQuery's animate() method to add smooth page scroll
-//       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-//       $('html, body').animate({
-//         scrollTop: $(hash).offset().top
-//       }, 800, function(){
-   
-//         // Add hash (#) to URL when done scrolling (default click behavior)
-//         window.location.hash = hash;
-//       });
-//     } // End if
-//   });
     }
 }
