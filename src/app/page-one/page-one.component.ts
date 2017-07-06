@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import 'gsap/src/minified/TweenMax.min.js';
-// import * as TweenLite from 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
-// import * as GSAP from 'gsap';
-//import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
-// import * as ScrollMagic from 'scrollmagic';
-// import { GSAP } from 'gsap/TweenLite.js';
-// import { ScrollMagic } from 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js';
-// import { AnimationGSAP } from 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
+
 import * as ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';

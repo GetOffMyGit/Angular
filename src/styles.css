@@ -10,6 +10,13 @@
     overflow: visible;
 }
 
+.side-nav {
+    position: sticky;
+    top: 30px;
+    width: 150px;
+    height: 500px;
+}
+
 html, body {
 }
 
