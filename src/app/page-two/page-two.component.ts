@@ -7,6 +7,7 @@ import { PageTranslateTransition } from '../animations/router-animations';
     animations: [PageTranslateTransition],
     host: {
         '[class.content]' : 'true',
+        '[class.px-5]' : 'true',
         '[@PageTranslateTransition]': ''
     }
 })

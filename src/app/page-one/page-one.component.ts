@@ -18,6 +18,8 @@ import { WindowReferenceService } from '../global-object.services/window-referen
     animations: [PageTranslateTransition],
     host: {
         '[class.content]': 'true',
+        '[class.px-sm-2]' : 'true',
+        '[class.px-md-5]': 'true',
         '[@PageTranslateTransition]': ''
     }
 })
