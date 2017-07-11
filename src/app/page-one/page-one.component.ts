@@ -6,7 +6,7 @@ import * as ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
-import { PageFadeTransition } from '../animations/router-animations';
+import { PageTranslateTransition } from '../animations/router-animations';
 import { ScrollAnimationsService } from '../animations/scroll-animations.service';
 import { WindowReferenceService } from '../global-object.services/window-reference.service';
 
@@ -15,10 +15,10 @@ import { WindowReferenceService } from '../global-object.services/window-referen
     templateUrl: './page-one.component.html',
     providers: [ScrollAnimationsService,
         WindowReferenceService],
-    animations: [PageFadeTransition],
+    animations: [PageTranslateTransition],
     host: {
         '[class.content]': 'true',
-        '[@PageFadeTransition]': ''
+        '[@PageTranslateTransition]': ''
     }
 })
 export class PageOneComponent implements OnInit {

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { PageFadeTransition } from '../animations/router-animations';
+import { PageTranslateTransition } from '../animations/router-animations';
 
 @Component({
     selector: 'page-two',
     templateUrl: './page-two.component.html',
-    animations: [PageFadeTransition],
+    animations: [PageTranslateTransition],
     host: {
         '[class.content]' : 'true',
-        '[@PageFadeTransition]': ''
+        '[@PageTranslateTransition]': ''
     }
 })
 export class PageTwoComponent {}
