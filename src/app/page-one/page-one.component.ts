@@ -45,21 +45,7 @@ export class PageOneComponent implements OnInit {
 
         var componentRef = this;
         $(".side-nav-link").click(function (e) {
-            // componentRef.route.fragment.subscribe((fragment : string) => {
-            //     //var hash = componentRef._window.location.hash;
-            //     console.log(fragment);
-            //     e.preventDefault();
-            //     $('html, body').animate({
-            //         scrollTop: $(fragment).offset().top
-            //     }, 300, "swing", function () {
-            //         window.location.hash = fragment;
-            //     });
-            // });
-
             e.preventDefault();
-            //var hash = componentRef._window.location.hash;
-            //console.log(hash);
-            //var nativeWindow = componentRef.windowReferenceService.nativeWindow.location.hash;
             var hash = $(this).attr('href');
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
