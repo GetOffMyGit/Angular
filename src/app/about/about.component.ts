@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { PageTranslateTransition } from '../animations/router-animations';
 
 @Component({
-    selector: 'page-two',
-    templateUrl: './page-two.component.html',
+    selector: 'about',
+    templateUrl: './about.component.html',
     animations: [PageTranslateTransition],
     host: {
         '[class.content]' : 'true',
@@ -12,4 +12,4 @@ import { PageTranslateTransition } from '../animations/router-animations';
         '[@PageTranslateTransition]': ''
     }
 })
-export class PageTwoComponent {}
+export class AboutComponent {}

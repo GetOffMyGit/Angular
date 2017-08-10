@@ -11,19 +11,20 @@ import { ScrollAnimationsService } from '../animations/scroll-animations.service
 import { WindowReferenceService } from '../global-object.services/window-reference.service';
 
 @Component({
-    selector: 'page-one',
-    templateUrl: './page-one.component.html',
+    selector: 'home',
+    templateUrl: './home.component.html',
     providers: [ScrollAnimationsService,
         WindowReferenceService],
     animations: [PageTranslateTransition],
     host: {
         '[class.content]': 'true',
-        '[class.px-sm-2]' : 'true',
+        '[class.px-xs-2]' : 'true',
+        '[class.px-sm-3]' : 'true',
         '[class.px-md-5]': 'true',
         '[@PageTranslateTransition]': ''
     }
 })
-export class PageOneComponent implements OnInit {
+export class HomeComponent implements OnInit {
     private _window: Window;
 
     constructor(private scrollAnimationsService: ScrollAnimationsService, private windowReferenceService: WindowReferenceService, private route: ActivatedRoute) {
