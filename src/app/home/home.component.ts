@@ -6,23 +6,15 @@ import * as ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
-import { PageTranslateTransition } from '../animations/router-animations';
-import { ScrollAnimationsService } from '../animations/scroll-animations.service';
+import { ScrollAnimationsService } from '../animations/scroll-animation.service';
 import { WindowReferenceService } from '../global-object.services/window-reference.service';
 
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
     providers: [ScrollAnimationsService,
-        WindowReferenceService],
-    animations: [PageTranslateTransition],
-    host: {
-        '[class.content]': 'true',
-        '[class.px-xs-2]' : 'true',
-        '[class.px-sm-3]' : 'true',
-        '[class.px-md-5]': 'true',
-        '[@PageTranslateTransition]': ''
-    }
+        WindowReferenceService]
 })
 export class HomeComponent implements OnInit {
     private _window: Window;
@@ -32,6 +24,8 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+        $('#navBarId').hide();
+
         var controller = new ScrollMagic.Controller();
 
         var triggerElement = document.getElementById('triggerElement');

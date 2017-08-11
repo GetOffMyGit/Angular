@@ -1,4 +1,9 @@
 @import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins';
+
+#navBarId {
+    background-color: white;
+}
 
 .navbar-custom {
     z-index: $zindex-navbar;
@@ -11,3 +16,33 @@
 .navbar-item-custom {
     margin: 2rem;
 }
+
+// @include media-breakpoint-up(xs) {
+//     #navBarId {
+//         height: 50px;
+//     }
+//  }
+
+// @include media-breakpoint-up(sm) {
+//     #navBarId {
+//         height: 50px;
+//     }
+//  }
+
+// @include media-breakpoint-up(md) {
+//     #navBarId {
+//         height: 50px;
+//     }
+//  }
+
+// @include media-breakpoint-up(lg) {
+//     #navBarId {
+//         height: 100px;
+//     }
+//  }
+
+// @include media-breakpoint-up(xl) {
+//     #navBarId {
+//         height: 100px;
+//     }
+//  }

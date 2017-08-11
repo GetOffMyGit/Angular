@@ -1,15 +1,40 @@
-import { Component } from '@angular/core';
-import { PageTranslateTransition } from '../animations/router-animations';
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
+import { WindowReferenceService } from '../global-object.services/window-reference.service';
+import { TransitionAnimationService } from '../animations/transition-animation.service';
+import { RotationAnimationService } from '../animations/rotation-animation.service';
 
 @Component({
     selector: 'about',
     templateUrl: './about.component.html',
-    animations: [PageTranslateTransition],
-    host: {
-        '[class.content]' : 'true',
-        '[class.px-sm-2]' : 'true',
-        '[class.px-md-5]' : 'true',
-        '[@PageTranslateTransition]': ''
-    }
+    styleUrls: [
+        './about.component.scss'
+    ],
+    providers: [
+        WindowReferenceService,
+        TransitionAnimationService,
+        RotationAnimationService
+    ]
 })
-export class AboutComponent {}
+export class AboutComponent implements OnInit {
+    private _window : Window;
+
+    constructor(
+        private pageLoadAnimationsService: TransitionAnimationService,
+        private rotationAnimationService : RotationAnimationService,
+        private windowReferenceService : WindowReferenceService) {
+            this._window = windowReferenceService.nativeWindow;
+        }
+
+    ngOnInit() {
+        $('#navBarId').show();
+
+        var content = document.getElementById('content');
+        var triggered = document.getElementById('triggered');
+
+        this.pageLoadAnimationsService.ElasticAnimation(content);
+        //this.rotationAnimationService.ClockwiseSmall(content);
+        this.rotationAnimationService.ClockwiseInfinite(triggered);
+    }
+}

@@ -6,16 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { IntroComponent } from './intro/intro.component';
 import { HomeComponent } from './home/home.component';
-import { BlogsComponent } from './blogs/blogs.component';
+import { PostsComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
 
 const appRoutes : Routes = [
   {
-    path: 'page-two',
-    component: BlogsComponent
+    path: 'posts',
+    component: PostsComponent
   },
   {
-    path: 'page-three',
+    path: 'about',
     component: AboutComponent
   },
   {
@@ -29,7 +29,7 @@ const appRoutes : Routes = [
     AppComponent,
     IntroComponent,
     HomeComponent,
-    BlogsComponent,
+    PostsComponent,
     AboutComponent
   ],
   imports: [

@@ -2,6 +2,8 @@
 @import './node_modules/bootstrap/scss/mixins';
 
 #introDiv {
+    min-height: 100%;
+    height: 100%;
 }
 
 #pjDiv {
@@ -15,10 +17,9 @@
     display: inline-block;
     padding: 0;
     margin: 0;
-    background-color: pink;
 }
 
-.pjLetter {
+.introLetter {
     line-height: 100%;
     padding: 0;
     margin: 0;
@@ -28,79 +29,32 @@
     
 }
 
-#bigP {
-}
-
-#bigJ {
-    //transform: translate3d(0, 50px, 0);
-
-}
-
 @include media-breakpoint-up(xs) { 
-    #pjDiv {
-    }
-
-    .pjLetter {
+    .introLetter {
         font-size: 55px;
-    }
-
-    #introDiv {
-        background-color: lightblue;
-        height: 175px;
     }
  }
 
 @include media-breakpoint-up(sm) {
-    #pjDiv {
-    } 
-    .pjLetter {
+    .introLetter {
         font-size: 70px;
-    }
-
-    #introDiv {
-        background-color: lightgoldenrodyellow;
-        height: 200px;
     }
  }
 
 @include media-breakpoint-up(md) { 
-    #pjDiv {
-    } 
-
-    .pjLetter {
+    .introLetter {
         font-size: 80px;
-    }
-
-    #introDiv {
-        background-color: lightsteelblue;
-        height: 225px;
     }
  }
 
 @include media-breakpoint-up(lg) {
-    #pjDiv {
-    } 
-
-    .pjLetter {
+    .introLetter {
         font-size: 90px;
-    }
-
-    #introDiv {
-        background-color: lightgray;
-        height: 250px;
     }
  }
 
 @include media-breakpoint-up(xl) { 
-    #pjDiv {
-    } 
-
-    .pjLetter {
+    .introLetter {
         font-size: 100px;
-    }
-
-    #introDiv {
-        background-color: lightcyan;
-        height: 275px;
     }
  }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TweenMax, TimelineMax, Elastic } from 'gsap';
 
 @Injectable()
-export class IntroAnimationsService {
+export class IntroAnimationService {
     IntroLetterAnimation() {
         TweenMax.fromTo('#bigH', 1.5, { y: 200, opacity: 0 }, { y: 0, opacity: 1, ease: Elastic.easeOut.config(1, 0.4) }).delay(0.4);
         TweenMax.fromTo('#bigE', 1.5, { y: 200, opacity: 0 }, { y: 0, opacity: 1, ease: Elastic.easeOut.config(1, 0.4) }).delay(0.45);
