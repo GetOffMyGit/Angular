@@ -4,9 +4,7 @@ import { IntroAnimationService } from '../animations/intro-animation.service';
 @Component({
     selector: 'intro',
     templateUrl: './intro.component.html',
-    providers: [
-        IntroAnimationService
-    ],
+    providers: [],
     styleUrls: ['./intro.component.scss'],
     host: {
     }

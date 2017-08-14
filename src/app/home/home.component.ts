@@ -13,8 +13,7 @@ import { WindowReferenceService } from '../global-object.services/window-referen
     selector: 'home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    providers: [ScrollAnimationsService,
-        WindowReferenceService]
+    providers: []
 })
 export class HomeComponent implements OnInit {
     private _window: Window;

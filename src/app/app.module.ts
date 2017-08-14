@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
 
+import { WindowReferenceService } from './global-object.services/window-reference.service';
+import { IntroAnimationService } from './animations/intro-animation.service';
+import { ScrollAnimationsService } from './animations/scroll-animation.service';
+import { TransitionAnimationService } from './animations/transition-animation.service';
+import { RotationAnimationService } from './animations/rotation-animation.service';
+
 const appRoutes : Routes = [
   {
     path: 'posts',
@@ -37,7 +43,13 @@ const appRoutes : Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    WindowReferenceService,
+    IntroAnimationService,
+    ScrollAnimationsService,
+    TransitionAnimationService,
+    RotationAnimationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

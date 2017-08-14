@@ -11,11 +11,7 @@ import { RotationAnimationService } from '../animations/rotation-animation.servi
     styleUrls: [
         './about.component.scss'
     ],
-    providers: [
-        WindowReferenceService,
-        TransitionAnimationService,
-        RotationAnimationService
-    ]
+    providers: []
 })
 export class AboutComponent implements OnInit {
     private _window : Window;
