@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IntroAnimationService } from '../animations/intro-animation.service';
+import { IntroAnimationService } from '../services/animations/animation.service';
 
 @Component({
     selector: 'intro',
-    templateUrl: './intro.component.html',
+    templateUrl: './intro.html',
     providers: [],
-    styleUrls: ['./intro.component.scss'],
+    styleUrls: ['./intro.scss'],
     host: {
     }
 })

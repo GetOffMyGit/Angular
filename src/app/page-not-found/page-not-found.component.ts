@@ -3,10 +3,10 @@ import { Title } from '@angular/platform-browser';
 import * as $ from 'jquery';
 
 @Component({
-    selector: 'posts',
-    templateUrl: './posts.component.html'
+    selector: 'page-found-found',
+    templateUrl: './page-not-found.html'
 })
-export class PostsComponent implements OnInit{
+export class PageNotFoundComponent implements OnInit{
     constructor(
         private titleService : Title
     ) {
@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit{
     ngOnInit() {
         $('#navBarId').show();
 
-        this.titleService.setTitle("Posts");
+        this.titleService.setTitle("Page Not Found");
     }
 
 }
